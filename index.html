@@ -293,18 +293,17 @@ nav a {
 }
 
 /* Adjust the navigation for small screens */
+/* Adjust Navigation for Smaller Screens */
 @media (max-width: 600px) {
-    nav {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center;
+    nav a {
+        margin-bottom: 10px; /* Add space between buttons */
     }
 
-    nav a {
-        font-size: 12px; /* Smaller font size for smaller screens */
-        padding: 8px 10px; /* Adjust padding */
-        width: 90%; /* Make buttons wider */
+    nav {
+        gap: 15px; /* Additional gap between rows if buttons wrap */
     }
 }
+
 
 </style>
 <style>
