@@ -293,14 +293,19 @@ nav a {
 }
 
 /* Adjust the navigation for small screens */
-/* Adjust Navigation for Smaller Screens */
 @media (max-width: 600px) {
-    nav a {
-        margin-bottom: 10px; /* Add space between buttons */
+    nav {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center align buttons */
+        flex-wrap: wrap; /* Allow wrapping */
+        gap: 10px; /* Add consistent spacing between buttons */
     }
 
-    nav {
-        gap: 15px; /* Additional gap between rows if buttons wrap */
+    nav a {
+        font-size: 12px; /* Smaller font size for smaller screens */
+        padding: 8px 10px; /* Adjust padding */
+        width: 90%; /* Make buttons wider */
+        margin: 5px 0; /* Add vertical space between buttons */
     }
 }
 
