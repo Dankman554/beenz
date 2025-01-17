@@ -408,6 +408,51 @@
     });
 </script>
 
+<script>
+    // Function to play the fart sound
+    function playFartSound() {
+        const audio = new Audio("https://www.soundjay.com/human/fart-01.mp3");
+        audio.play();
+    }
+
+    // Add floating beans effect
+    document.addEventListener("DOMContentLoaded", () => {
+        const body = document.body;
+
+        for (let i = 0; i < 20; i++) {
+            const bean = document.createElement("img");
+            bean.src = "beenz.png"; // Replace with your actual image source for beans
+            bean.className = "bean";
+            bean.style.position = "absolute";
+            bean.style.width = "30px"; // Set a width for the beans
+            bean.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+            bean.style.top = "-50px"; // Start just above the top of the viewport
+            bean.style.animation = `float ${Math.random() * 3 + 2}s linear infinite`;
+            bean.style.animationDelay = Math.random() * 2 + "s";
+            body.appendChild(bean);
+
+            // Remove the bean after it has floated out of view
+            setTimeout(() => {
+                bean.remove();
+            }, 3000);
+        }
+    });
+
+    // Add keyframes for the floating animation
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes float {
+            from {
+                transform: translateY(-10vh); /* Start above the viewport */
+            }
+            to {
+                transform: translateY(100vh); /* Float down out of the viewport */
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
 
 
 
