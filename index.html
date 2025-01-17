@@ -297,17 +297,18 @@ nav a {
     nav {
         flex-direction: column; /* Stack buttons vertically */
         align-items: center; /* Center align buttons */
-        flex-wrap: wrap; /* Allow wrapping */
-        gap: 10px; /* Add consistent spacing between buttons */
+        flex-wrap: nowrap; /* Prevent unnecessary wrapping */
+        gap: 20px; /* Increase spacing between buttons */
     }
 
     nav a {
         font-size: 12px; /* Smaller font size for smaller screens */
-        padding: 8px 10px; /* Adjust padding */
+        padding: 10px 15px; /* Adjust padding for larger buttons */
         width: 90%; /* Make buttons wider */
-        margin: 5px 0; /* Add vertical space between buttons */
+        margin: 10px 0; /* Add more vertical space between buttons */
     }
 }
+
 
 
 </style>
