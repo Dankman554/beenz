@@ -619,6 +619,9 @@ nav a {
 </script>
 
 <script>
+const pipeImg = new Image();
+pipeImg.src = "beenz.png";
+
     document.addEventListener("DOMContentLoaded", () => {
         const canvas = document.getElementById("flappyBeanGame");
         const ctx = canvas.getContext("2d");
@@ -689,13 +692,21 @@ nav a {
             ctx.drawImage(img, bean.x, bean.y, bean.width, bean.height);
         }
 
-        function drawPipes() {
-            pipes.forEach(pipe => {
-                ctx.fillStyle = "#FF0000";
-                ctx.fillRect(pipe.x, 0, pipe.width, pipe.top);
-                ctx.fillRect(pipe.x, canvas.height - pipe.bottom, pipe.width, pipe.bottom);
-            });
+     function drawPipes() {
+    pipes.forEach(pipe => {
+        // Draw the top pipe
+        for (let y = 0; y < pipe.top; y += pipeImg.height) {
+            ctx.drawImage(pipeImg, pipe.x, y, pipe.width, pipeImg.height);
         }
+
+        // Draw the bottom pipe
+        for (let y = canvas.height - pipe.bottom; y < canvas.height; y += pipeImg.height) {
+            ctx.drawImage(pipeImg, pipe.x, y, pipe.width, pipeImg.height);
+        }
+    });
+}
+
+
 
         function drawBackground() {
             ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
@@ -714,7 +725,7 @@ nav a {
 
             if (frameCount % 200 === 0) {
                 let top = Math.random() * (canvas.height / 2);
-                let gap = 200; // Make the gap larger for easier play
+                let gap = 300; // Make the gap larger for easier play
                 let bottom = canvas.height - top - gap;
                 pipes.push({
                     x: canvas.width,
