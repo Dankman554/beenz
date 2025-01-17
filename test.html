@@ -191,6 +191,25 @@
         .bean:nth-child(even) {
             animation-duration: 2.5s;
         }
+
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeInPage 0.5s;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -218,13 +237,15 @@
     <div id="about" class="section">
         <h2>About $BEENZ</h2>
         <img src="https://via.placeholder.com/150" alt="Beenz logo" class="left">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut turpis nulla. Maecenas non tortor ac urna vehicula pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et neque eu arcu ultricies gravida sit amet vel elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut turpis nulla. Maecenas non tortor ac urna vehicula pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et neque eu arcu ultricies gravida sit amet vel elit. Sed venenatis dui et libero suscipit tincidunt. Duis quis justo vel libero pellentesque convallis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus, felis id volutpat congue, eros erat sollicitudin risus, in laoreet tortor arcu sed odio. Suspendisse vel ligula orci. Fusce quis ex at nulla bibendum elementum et vitae urna. Vivamus pulvinar sapien at sapien aliquet, vel tincidunt lectus eleifend. Quisque luctus pharetra enim, at accumsan ligula scelerisque at. Nullam bibendum augue in sapien condimentum, nec mollis erat tincidunt.</p>
     </div>
 
     <div id="chart" class="section">
         <h2>Check the $BEENZ Chart</h2>
         <img src="https://via.placeholder.com/150" alt="Chart image" class="right">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Nulla facilisi. Donec quis felis id magna commodo dictum. Duis sodales nisi in ligula consectetur, non vestibulum nulla dignissim. Proin pharetra urna nec nunc vehicula, ut interdum tortor ultrices. Fusce ac semper eros, non ullamcorper metus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Nulla facilisi. Donec quis felis id magna commodo dictum. Duis sodales nisi in ligula consectetur, non vestibulum nulla dignissim. Proin pharetra urna nec nunc vehicula, ut interdum tortor ultrices. Fusce ac semper eros, non ullamcorper metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales magna id arcu dignissim, a fermentum lectus feugiat. Pellentesque maximus tortor in bibendum suscipit. Donec vel gravida dolor. Ut suscipit ex eget purus gravida, id sagittis ligula fermentum. Etiam tincidunt neque vel justo viverra, ut feugiat risus fermentum. Sed vel mollis tortor, a pretium est.</p>
         <a href="https://dexscreener.com/solana/bh2swzkqsbo1ehrf6rmbzjzztdcyqkh8wunjst95id6n" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">View on Dexscreener</a>
     </div>
 
@@ -232,6 +253,7 @@
         <h2>Join the $BEENZ Community</h2>
         <img src="https://via.placeholder.com/150" alt="Community image" class="left">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Fusce suscipit nulla non diam ullamcorper, at sagittis eros dapibus. Nulla lacinia, libero ac hendrerit posuere, odio ligula mattis arcu, vel ornare orci arcu id lorem. Donec pharetra, risus a egestas porttitor, lectus risus gravida arcu, vitae varius arcu erat at arcu.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor nec justo pulvinar, a gravida libero vehicula. Mauris a felis non purus aliquam vehicula in quis nisi. Curabitur in ante ut enim consectetur pellentesque. Integer vel ex hendrerit, feugiat turpis sit amet, malesuada ex. Nulla interdum turpis eget pharetra convallis.</p>
         <a href="https://t.me/example" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">Join Telegram</a>
     </div>
 
