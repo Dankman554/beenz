@@ -295,21 +295,19 @@ nav a {
 /* Adjust the navigation for small screens */
 @media (max-width: 600px) {
     nav {
+        display: flex;
         flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center align buttons */
-        flex-wrap: nowrap; /* Prevent unnecessary wrapping */
-        gap: 20px; /* Increase spacing between buttons */
+        align-items: center; /* Center the buttons */
+        gap: 15px; /* Add consistent spacing between buttons */
     }
 
     nav a {
-        font-size: 12px; /* Smaller font size for smaller screens */
+        font-size: 14px; /* Slightly larger font for readability */
         padding: 10px 15px; /* Adjust padding for larger buttons */
-        width: 90%; /* Make buttons wider */
-        margin: 10px 0; /* Add more vertical space between buttons */
+        width: auto; /* Auto width to avoid buttons being too wide */
+        margin: 0; /* Remove unnecessary margins */
     }
 }
-
-
 
 </style>
 <style>
