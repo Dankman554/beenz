@@ -199,7 +199,6 @@
     <footer>
         <p>&copy; 2025 $BEENZ Retro Revival. Powered by Solana.</p>
     </footer>
-
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const canvas = document.getElementById("flappyBeanGame");
@@ -225,17 +224,27 @@
         const background = new Image();
         background.src = "flappy-bg.png";
 
+        function handleInput() {
+            if (onMainMenu) {
+                onMainMenu = false;
+                gameRunning = true;
+            } else if (gameRunning) {
+                bean.velocity = Math.max(bean.lift, -10); // Limit upward velocity
+            } else if (gameOver) {
+                resetGame();
+            }
+        }
+
         document.addEventListener("keydown", (e) => {
             if (e.code === "Space") {
-                if (onMainMenu) {
-                    onMainMenu = false;
-                    gameRunning = true;
-                } else if (gameRunning) {
-                    bean.velocity = Math.max(bean.lift, -10); // Limit upward velocity
-                } else if (gameOver) {
-                    resetGame();
-                }
+                handleInput();
             }
+        });
+
+        canvas.addEventListener("click", handleInput);
+        canvas.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            handleInput();
         });
 
         function playFartSound() {
