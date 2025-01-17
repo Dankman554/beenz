@@ -64,13 +64,14 @@
             color: #FFFFFF;
             background-color: #FF0000;
             padding: 10px 20px;
-            margin: 0 10px;
+            margin: 10px 5px;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
             border: 2px solid #FFFFFF;
             border-radius: 10px;
             box-shadow: 2px 2px 5px #000000;
+            display: inline-block;
         }
 
         nav a:hover {
@@ -97,8 +98,6 @@
             color: #FFCC00;
             font-size: 28px;
             margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
         }
 
         .section p {
@@ -106,45 +105,12 @@
             line-height: 1.8;
             margin: 0 auto;
             width: 70%;
-            opacity: 0;
-            animation: fadeIn 1s forwards 0.5s;
         }
 
         .section img {
             width: 150px;
             height: auto;
             position: absolute;
-            opacity: 0;
-            animation: slideIn 1s forwards;
-        }
-
-        .section img.left {
-            left: -200px;
-            top: 20px;
-            animation-delay: 0.2s;
-        }
-
-        .section img.right {
-            right: -200px;
-            top: 20px;
-            animation-delay: 0.2s;
-        }
-
-        .community-image {
-            width: 120px;
-            height: auto;
-            margin: 20px auto;
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(0); }
-            to { opacity: 1; transform: translateX(200px); }
         }
 
         footer {
@@ -174,48 +140,15 @@
             background-color: #FF6666;
         }
 
-        .bean {
-            position: absolute;
-            top: -50px;
-            width: 50px;
-            height: auto;
-            animation: drop 3s linear infinite;
+        .game-container {
+            text-align: center;
+            margin: 50px auto;
         }
 
-        @keyframes drop {
-            0% {
-                transform: translateY(-100px);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        .bean:nth-child(odd) {
-            animation-duration: 4s;
-        }
-
-        .bean:nth-child(even) {
-            animation-duration: 2.5s;
-        }
-
-        .page-transition {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            animation: fadeInPage 0.5s;
-        }
-
-        @keyframes fadeInPage {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        canvas {
+            border: 3px solid #FF0000;
+            background: url('flappy-bg.png') repeat-x; /* Add your flappy bird-style background */
+            background-size: cover;
         }
     </style>
 </head>
@@ -243,52 +176,233 @@
 
     <div id="about" class="section">
         <h2>About $BEENZ</h2>
-        <img src="https://via.placeholder.com/150" alt="Beenz logo" class="left">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut turpis nulla. Maecenas non tortor ac urna vehicula pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et neque eu arcu ultricies gravida sit amet vel elit. Sed venenatis dui et libero suscipit tincidunt. Duis quis justo vel libero pellentesque convallis.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus, felis id volutpat congue, eros erat sollicitudin risus, in laoreet tortor arcu sed odio. Suspendisse vel ligula orci. Fusce quis ex at nulla bibendum elementum et vitae urna. Vivamus pulvinar sapien at sapien aliquet, vel tincidunt lectus eleifend. Quisque luctus pharetra enim, at accumsan ligula scelerisque at. Nullam bibendum augue in sapien condimentum, nec mollis erat tincidunt.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
 
     <div id="chart" class="section">
         <h2>Check the $BEENZ Chart</h2>
-        <img src="https://via.placeholder.com/150" alt="Chart image" class="right">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Nulla facilisi. Donec quis felis id magna commodo dictum. Duis sodales nisi in ligula consectetur, non vestibulum nulla dignissim. Proin pharetra urna nec nunc vehicula, ut interdum tortor ultrices. Fusce ac semper eros, non ullamcorper metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales magna id arcu dignissim, a fermentum lectus feugiat. Pellentesque maximus tortor in bibendum suscipit. Donec vel gravida dolor. Ut suscipit ex eget purus gravida, id sagittis ligula fermentum. Etiam tincidunt neque vel justo viverra, ut feugiat risus fermentum. Sed vel mollis tortor, a pretium est.</p>
+        <p>Track the progress of $BEENZ and get real-time updates on its price!</p>
         <a href="https://dexscreener.com/solana/bh2swzkqsbo1ehrf6rmbzjzztdcyqkh8wunjst95id6n" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">View on Dexscreener</a>
     </div>
 
     <div id="community" class="section">
         <h2>Join the $BEENZ Community</h2>
-        <img src="https://pbs.twimg.com/media/GhYtjwfXwAAmZdh?format=jpg&name=large" alt="Community image" class="community-image">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Fusce suscipit nulla non diam ullamcorper, at sagittis eros dapibus. Nulla lacinia, libero ac hendrerit posuere, odio ligula mattis arcu, vel ornare orci arcu id lorem. Donec pharetra, risus a egestas porttitor, lectus risus gravida arcu, vitae varius arcu erat at arcu.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis tortor nec justo pulvinar, a gravida libero vehicula. Mauris a felis non purus aliquam vehicula in quis nisi. Curabitur in ante ut enim consectetur pellentesque. Integer vel ex hendrerit, feugiat turpis sit amet, malesuada ex. Nulla interdum turpis eget pharetra convallis.</p>
+        <p>Join like-minded individuals and be part of the $BEENZ revolution!</p>
         <a href="https://t.me/example" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">Join Telegram</a>
+    </div>
+
+    <div class="game-container">
+        <h2>Play Flappy Bean</h2>
+        <canvas id="flappyBeanGame" width="400" height="600"></canvas>
     </div>
 
     <footer>
         <p>&copy; 2025 $BEENZ Retro Revival. Powered by Solana.</p>
     </footer>
 
-    <script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const canvas = document.getElementById("flappyBeanGame");
+        const ctx = canvas.getContext("2d");
+
+        const bean = {
+            x: 50,
+            y: 150,
+            width: 50,
+            height: 50,
+            gravity: 0.6,
+            lift: -10,
+            velocity: 0,
+        };
+
+        let pipes = [];
+        let frameCount = 0;
+        let score = 0;
+        let gameRunning = false;
+        let gameOver = false;
+        let onMainMenu = true;
+
+        const background = new Image();
+        background.src = "flappy-bg.png";
+
+        document.addEventListener("keydown", (e) => {
+            if (e.code === "Space") {
+                if (onMainMenu) {
+                    onMainMenu = false;
+                    gameRunning = true;
+                } else if (gameRunning) {
+                    bean.velocity = Math.max(bean.lift, -10); // Limit upward velocity
+                } else if (gameOver) {
+                    resetGame();
+                }
+            }
+        });
+
         function playFartSound() {
             const audio = new Audio("https://www.soundjay.com/human/fart-01.mp3");
             audio.play();
         }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const body = document.body;
-            for (let i = 0; i < 20; i++) {
-                const bean = document.createElement("img");
-                bean.src = "beenz.png";
-                bean.className = "bean";
-                bean.style.left = Math.random() * 100 + "vw";
-                bean.style.animationDelay = Math.random() * 2 + "s";
-                body.appendChild(bean);
+        function resetGame() {
+            pipes = [];
+            frameCount = 0;
+            score = 0;
+            bean.y = 150;
+            bean.velocity = 0;
+            bean.gravity = 0.6; // Reset gravity to default
+            gameRunning = false;
+            gameOver = false;
+            onMainMenu = true;
+        }
 
-                setTimeout(() => {
-                    bean.remove();
-                }, 3000);
+        function drawBean() {
+            const img = new Image();
+            img.src = "beenz.png";
+            ctx.drawImage(img, bean.x, bean.y, bean.width, bean.height);
+        }
+
+        function drawPipes() {
+            pipes.forEach(pipe => {
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(pipe.x, 0, pipe.width, pipe.top);
+                ctx.fillRect(pipe.x, canvas.height - pipe.bottom, pipe.width, pipe.bottom);
+            });
+        }
+
+        function drawBackground() {
+            ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        }
+
+        function drawScore() {
+            ctx.fillStyle = "#FFFFFF";
+            ctx.font = "24px Arial";
+            ctx.fillText(`Score: ${score}`, 10, 30);
+        }
+
+        function updatePipes() {
+            pipes.forEach(pipe => {
+                pipe.x -= 2;
+            });
+
+            if (frameCount % 200 === 0) {
+                let top = Math.random() * (canvas.height / 2);
+                let gap = 200; // Make the gap larger for easier play
+                let bottom = canvas.height - top - gap;
+                pipes.push({
+                    x: canvas.width,
+                    width: 70,
+                    top: top,
+                    bottom: bottom,
+                    passed: false,
+                });
             }
-        });
-    </script>
+
+            pipes = pipes.filter(pipe => pipe.x + pipe.width > 0); // Remove pipes that go off-screen
+        }
+
+        function detectCollision() {
+            pipes.forEach(pipe => {
+                // Check collision with pipes
+                if (
+                    bean.x + bean.width > pipe.x && // Right edge of the bean passes the left edge of the pipe
+                    bean.x < pipe.x + pipe.width && // Left edge of the bean passes the right edge of the pipe
+                    (bean.y < pipe.top || // Bean collides with the top pipe
+                     bean.y + bean.height > canvas.height - pipe.bottom) // Bean collides with the bottom pipe
+                ) {
+                    bean.velocity = 0; // Stop upward/downward movement
+                    bean.gravity = 0; // Disable gravity
+                    gameRunning = false; // Stop game logic
+                    setTimeout(() => (gameOver = true), 1000); // Delay game over screen for death animation
+                }
+
+                // Check if the bean successfully passed through a pipe
+                if (!pipe.passed && bean.x > pipe.x + pipe.width) {
+                    score++;
+                    pipe.passed = true;
+                    playFartSound();
+                }
+            });
+
+            // Prevent bean from going beyond the canvas boundaries
+            if (bean.y + bean.height >= canvas.height) {
+                bean.y = canvas.height - bean.height; // Stop at bottom
+                bean.velocity = 0;
+            }
+            if (bean.y <= 0) {
+                bean.y = 0; // Stop at top
+                bean.velocity = 0;
+            }
+        }
+
+        function deathAnimation() {
+            if (!gameRunning && !onMainMenu && !gameOver) {
+                // Simulate falling
+                bean.velocity += bean.gravity;
+                bean.y += bean.velocity;
+
+                if (bean.y + bean.height >= canvas.height) {
+                    bean.y = canvas.height - bean.height; // Stop at the bottom
+                    bean.velocity = 0; // No further movement
+                    gameOver = true; // End animation
+                }
+            }
+        }
+
+        function drawMainMenu() {
+            ctx.fillStyle = "#FFFFFF";
+            ctx.font = "30px Arial";
+            ctx.fillText("Flappy Bean", canvas.width / 2 - 90, canvas.height / 2 - 50);
+            ctx.font = "20px Arial";
+            ctx.fillText("Press Space to Start", canvas.width / 2 - 100, canvas.height / 2);
+        }
+
+        function drawGameOverScreen() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#FFFFFF";
+            ctx.font = "30px Arial";
+            ctx.fillText("Game Over", canvas.width / 2 - 80, canvas.height / 2 - 50);
+            ctx.font = "20px Arial";
+            ctx.fillText(`Final Score: ${score}`, canvas.width / 2 - 80, canvas.height / 2);
+            ctx.fillText("Press Space to Restart", canvas.width / 2 - 120, canvas.height / 2 + 50);
+        }
+
+        function gameLoop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBackground();
+
+            if (onMainMenu) {
+                drawMainMenu();
+            } else if (gameRunning) {
+                frameCount++;
+                drawBean();
+                drawPipes();
+                updatePipes();
+                drawScore();
+
+                bean.velocity += bean.gravity;
+                bean.y += bean.velocity;
+
+                detectCollision();
+            } else if (!gameRunning && !gameOver) {
+                deathAnimation(); // Play death animation
+                drawBean(); // Keep drawing the bean during animation
+            } else if (gameOver) {
+                drawGameOverScreen();
+            }
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    });
+</script>
+
+
+
+
+
+
 </body>
 </html>
