@@ -55,8 +55,69 @@
             }
             50% {
                 transform: translateY(-55%);
+				
+				
             }
         }
+		
+		@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+#history {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(180deg, #009999, #005555); /* Match the main site background */
+    color: #FFFFFF;
+    border-top: 3px solid #FF5733;
+    border-bottom: 3px solid #FF5733;
+    margin: 50px 0;
+}
+
+#history h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 32px;
+    color: #FFCC00;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+#history p {
+    font-size: 18px;
+    color: #FFFFFF;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+
+.history-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    background-color: #FF5733;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.history-link:hover {
+    background-color: #FF8566;
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+
 
         header h1 {
             font-family: 'Press Start 2P', cursive;
@@ -385,6 +446,7 @@ nav a {
         <a href="#how-to-buy">How to Buy</a>
         <a href="#tokenomics">Tokenomics</a>
         <a href="#community">Community</a>
+		<a href="#history">History</a>
         <a href="#FlappyBeenz">FlappyBeenz</a>
     </nav>
 
@@ -460,6 +522,23 @@ nav a {
     <p>Be part of the vibrant $BEENZ community on Twitter! Connect, share, and grow with like-minded individuals as we shape the future together.</p>
     <a href="https://x.com/i/communities/1879695521142514000" target="_blank" class="join-link">Join Our Twitter Community</a>
 </section>
+<section id="history">
+    <h2>History of Beenz</h2>
+    <p>
+        Beenz was one of the pioneering online currencies, launched in 1998 by Charles Cohen in London. It allowed consumers to earn "beenz" by performing activities such as visiting websites, shopping online, or logging on through specific internet service providers. These beenz could then be spent with participating online merchants, positioning Beenz as "the web's currency" and a globally acceptable alternative to traditional money.
+    </p>
+    <p>
+        The company expanded rapidly, establishing offices in 15 countries, including the United States, Sweden, France, Germany, Italy, Japan, Singapore, Australia, and China. At its peak, the Beenz website was translated into several languages to cater to its diverse user base.
+    </p>
+    <p>
+        Despite raising nearly $100 million from prominent investors such as Larry Ellison of Oracle and François Pinault of PPR, Beenz faced significant challenges. Since launching a new currency is illegal in many countries, the company had to meet with finance ministers across Europe to assure them that Beenz would be categorized as virtual points.
+    </p>
+    <p>
+        After the dot-com bubble burst, Beenz struggled to sustain its operations. In 2001, the company was sold to the U.S.-based Carlson Marketing Group. Eventually, the Beenz currency was discontinued, marking the end of one of the earliest attempts at creating a global online currency.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Beenz.com" target="_blank" class="history-link">Learn More on Wikipedia</a>
+</section>
+
 
 
     <section id="FlappyBeenz">
@@ -477,10 +556,19 @@ nav a {
 
    <script>
     // Function to play the fart sound
-    function playFartSound() {
-        const audio = new Audio("https://www.soundjay.com/human/fart-01.mp3");
-        audio.play();
-    }
+   function playFartSound() {
+    const audio = new Audio("https://www.soundjay.com/human/fart-01.mp3");
+    audio.play();
+
+    // Get the logo element
+    const logo = document.querySelector("header img");
+
+    // Remove and re-add the shake class to restart the animation
+    logo.classList.remove("shake");
+    void logo.offsetWidth; // Trigger reflow to restart the animation
+    logo.classList.add("shake");
+}
+
 
     // Add floating beans effect
     document.addEventListener("DOMContentLoaded", () => {
