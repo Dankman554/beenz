@@ -16,7 +16,9 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+			
         }
+		
 
         header {
             background: linear-gradient(to right, #009999, #005555);
@@ -723,10 +725,17 @@ pipeImg.src = "beenz.png";
             pipes.forEach(pipe => {
                 pipe.x -= 2;
             });
+        let gap = 240; // Default gap size
 
-            if (frameCount % 200 === 0) {
-                let top = Math.random() * (canvas.height / 2);
-                let gap = 300; // Make the gap larger for easier play
+        // Adjust gap size dynamically based on score
+        if (score > 10) gap = 220;
+        if (score > 20) gap = 215;
+        if (score > 30) gap = 195;
+
+        if (frameCount % 200 === 0) {
+            let minTopHeight = 50; // Minimum height of the top pipe
+            let maxTopHeight = canvas.height - gap - minTopHeight; // Maximum height to maintain the gap
+            let top = Math.floor(Math.random() * (maxTopHeight - minTopHeight + 1)) + minTopHeight;
                 let bottom = canvas.height - top - gap;
                 pipes.push({
                     x: canvas.width,
