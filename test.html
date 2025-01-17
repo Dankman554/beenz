@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BEENZ Retro Revival</title>
+    <style>
+        body {
+            font-family: "Verdana", sans-serif;
+            background: #009999;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            background: #009999;
+            padding: 40px 0;
+            border-bottom: 3px solid #FF0000;
+            text-align: center;
+            position: relative;
+        }
+
+        header img {
+            width: 200px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #FFFFFF;
+        }
+
+        .arrow {
+            position: absolute;
+            left: 60%;
+            top: 50%;
+            font-size: 14px;
+            color: #FFCC00;
+            animation: bounce 1s infinite;
+            transform: translateY(-50%);
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-50%) translateX(-5px);
+            }
+            50% {
+                transform: translateY(-50%) translateX(5px);
+            }
+        }
+
+        nav {
+            background: #003366;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            background-color: #FF0000;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #000000;
+        }
+
+        nav a:hover {
+            background-color: #FF6666;
+        }
+
+        marquee {
+            background: #FF0000;
+            color: #FFFFFF;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            color: #FFCC00;
+            font-size: 28px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 0 auto;
+            width: 70%;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        .section img {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            opacity: 0;
+            animation: slideIn 1s forwards;
+        }
+
+        .section img.left {
+            left: -200px;
+            top: 20px;
+            animation-delay: 0.2s;
+        }
+
+        .section img.right {
+            right: -200px;
+            top: 20px;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(0); }
+            to { opacity: 1; transform: translateX(200px); }
+        }
+
+        footer {
+            background: #003366;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 0;
+            border-top: 3px solid #FF0000;
+        }
+
+        .buy-now {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #FFFFFF;
+            box-shadow: 2px 2px 5px #000000;
+        }
+
+        .buy-now:hover {
+            background-color: #FF6666;
+        }
+
+        .bean {
+            position: absolute;
+            top: -50px;
+            width: 50px;
+            height: auto;
+            animation: drop 3s linear infinite;
+        }
+
+        @keyframes drop {
+            0% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .bean:nth-child(odd) {
+            animation-duration: 4s;
+        }
+
+        .bean:nth-child(even) {
+            animation-duration: 2.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>$BEENZ</h1>
+        <img src="https://static.wikia.nocookie.net/logopedia/images/a/a2/Beenz.png/revision/latest/scale-to-width-down/250?cb=20220506172804" 
+             alt="Big Bean" 
+             class="big-bean" 
+             onclick="playFartSound()">
+        <div class="arrow">⮜ Press me!</div>
+    </header>
+
+    <nav>
+        <a href="#about">About $BEENZ</a>
+        <a href="#chart">Chart</a>
+        <a href="#community">Community</a>
+    </nav>
+
+    <marquee>Welcome to $BEENZ Retro Revival! Relive the past, powered by Solana!</marquee>
+
+    <div style="text-align: center;">
+        <a href="https://dexscreener.com/solana/bh2swzkqsbo1ehrf6rmbzjzztdcyqkh8wunjst95id6n" target="_blank" class="buy-now">Buy Now</a>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About $BEENZ</h2>
+        <img src="https://via.placeholder.com/150" alt="Beenz logo" class="left">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut turpis nulla. Maecenas non tortor ac urna vehicula pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et neque eu arcu ultricies gravida sit amet vel elit.</p>
+    </div>
+
+    <div id="chart" class="section">
+        <h2>Check the $BEENZ Chart</h2>
+        <img src="https://via.placeholder.com/150" alt="Chart image" class="right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Nulla facilisi. Donec quis felis id magna commodo dictum. Duis sodales nisi in ligula consectetur, non vestibulum nulla dignissim. Proin pharetra urna nec nunc vehicula, ut interdum tortor ultrices. Fusce ac semper eros, non ullamcorper metus.</p>
+        <a href="https://dexscreener.com/solana/bh2swzkqsbo1ehrf6rmbzjzztdcyqkh8wunjst95id6n" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">View on Dexscreener</a>
+    </div>
+
+    <div id="community" class="section">
+        <h2>Join the $BEENZ Community</h2>
+        <img src="https://via.placeholder.com/150" alt="Community image" class="left">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Fusce suscipit nulla non diam ullamcorper, at sagittis eros dapibus. Nulla lacinia, libero ac hendrerit posuere, odio ligula mattis arcu, vel ornare orci arcu id lorem. Donec pharetra, risus a egestas porttitor, lectus risus gravida arcu, vitae varius arcu erat at arcu.</p>
+        <a href="https://t.me/example" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">Join Telegram</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 $BEENZ Retro Revival. Powered by Solana.</p>
+    </footer>
+
+    <script>
+        function playFartSound() {
+            const audio = new Audio("https://www.soundjay.com/human/fart-01.mp3");
+            audio.play();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const body = document.body;
+            for (let i = 0; i < 20; i++) {
+                const bean = document.createElement("img");
+                bean.src = "https://static.wikia.nocookie.net/logopedia/images/a/a2/Beenz.png/revision/latest/scale-to-width-down/250?cb=20220506172804";
+                bean.className = "bean";
+                bean.style.left = Math.random() * 100 + "vw";
+                bean.style.animationDelay = Math.random() * 2 + "s";
+                body.appendChild(bean);
+
+                setTimeout(() => {
+                    bean.remove();
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
