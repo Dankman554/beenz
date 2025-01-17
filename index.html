@@ -3,202 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$BEENZ Retro Revival</title>
+    <title>$BEENZ </title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: "Verdana", sans-serif;
-            background: #009999;
+            font-family: "Roboto", sans-serif;
+            background: linear-gradient(180deg, #009999, #005555);
             color: #FFFFFF;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            position: relative;
         }
 
         header {
-            background: #009999;
-            padding: 40px 0;
-            border-bottom: 3px solid #FF0000;
+            background: linear-gradient(to right, #009999, #005555);
+            padding: 60px 0;
             text-align: center;
             position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo-container {
+            position: relative;
+            display: inline-block;
         }
 
         header img {
-            width: 200px;
+            width: 150px;
             cursor: pointer;
-            margin: 20px 0;
+            display: block;
+            margin: 0 auto;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-            color: #FFFFFF;
-        }
-
-        .arrow {
+        header .arrow {
             position: absolute;
-            left: 60%;
+            left: 120%;
             top: 50%;
-            font-size: 14px;
+            font-size: 12px;
             color: #FFCC00;
             animation: bounce 1s infinite;
             transform: translateY(-50%);
+            font-family: 'Press Start 2P', cursive;
         }
 
         @keyframes bounce {
             0%, 100% {
-                transform: translateY(-50%) translateX(-5px);
+                transform: translateY(-50%);
             }
             50% {
-                transform: translateY(-50%) translateX(5px);
+                transform: translateY(-55%);
             }
         }
 
+        header h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 48px;
+            margin: 20px 0 0;
+            color: #FFCC00;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
         nav {
-            background: #003366;
-            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            background: #006666;
+            padding: 10px 0;
             text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         nav a {
             color: #FFFFFF;
-            background-color: #FF0000;
+            background-color: #FF5733;
             padding: 10px 20px;
-            margin: 10px 5px;
+            margin: 0 10px;
             text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border: 2px solid #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px #000000;
-            display: inline-block;
+            font-size: 16px;
+            font-family: 'Press Start 2P', cursive;
+            border-radius: 5px;
+            box-shadow: none;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         nav a:hover {
-            background-color: #FF6666;
+            background-color: #FF8566;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
-        marquee {
-            background: #FF0000;
-            color: #FFFFFF;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 10px 0;
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, #009999, #005555);
+            color: #FFCC00;
+        }
+
+        .hero h2 {
+            font-size: 36px;
             margin-bottom: 20px;
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 5px #000000;
         }
 
-        .section {
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero .buy-now {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #FF5733;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Press Start 2P', cursive;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s, box-shadow 0.2s;
+        }
+
+        .hero .buy-now:hover {
+            background-color: #FF8566;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        section {
             padding: 50px 20px;
             text-align: center;
+            color: #FFFFFF;
             position: relative;
-            overflow: hidden;
         }
+		
 
-        .section h2 {
-            color: #FFCC00;
+        section h2 {
             font-size: 28px;
             margin-bottom: 20px;
+            font-family: 'Press Start 2P', cursive;
+            color: #FFCC00;
+            text-shadow: 1px 1px 3px #000000;
+            position: relative;
         }
 
-        .section p {
+        section p {
             font-size: 18px;
-            line-height: 1.8;
+            max-width: 700px;
             margin: 0 auto;
-            width: 70%;
-        }
-
-        .section img {
-            width: 150px;
-            height: auto;
-            position: absolute;
+            line-height: 1.8;
         }
 
         footer {
-            background: #003366;
+            background: #006666;
             color: #FFFFFF;
             text-align: center;
-            padding: 15px 0;
-            border-top: 3px solid #FF0000;
+            padding: 20px;
+            font-size: 14px;
+            border-top: 3px solid #FF5733;
         }
 
-        .buy-now {
-            display: inline-block;
-            margin: 20px auto;
-            padding: 15px 30px;
-            background-color: #FF0000;
+        .tokenomics {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tokenomics .card {
+            background: #009999;
+            border: 6px solid #FF5733;
+            border-radius: 5px;
+            padding: 20px;
             color: #FFFFFF;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid #FFFFFF;
-            box-shadow: 2px 2px 5px #000000;
+            width: 300px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
         }
 
-        .buy-now:hover {
-            background-color: #FF6666;
+        .tokenomics .card:hover {
+            transform: translateY(-10px);
         }
 
-        .game-container {
-            text-align: center;
-            margin: 50px auto;
+        .tokenomics .card h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 20px;
+            color: #FFCC00;
+            margin-bottom: 10px;
         }
 
-        canvas {
-            border: 3px solid #FF0000;
-            background: url('flappy-bg.png') repeat-x; /* Add your flappy bird-style background */
-            background-size: cover;
+        .tokenomics .card p {
+            font-size: 16px;
         }
+		
+		<style>
+<style>
+/* General Styling for the Section */
+#how-to-buy {
+    text-align: center;
+    padding: 50px 20px;
+}
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    background: #005555;
+    border: 3px solid #FF5733;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    color: #FFFFFF;
+    text-align: left;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.step:hover {
+    transform: scale(1.05);
+}
+
+.step.left {
+    justify-content: flex-start;
+}
+
+.step.right {
+    justify-content: flex-end;
+}
+
+.step-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.step.right .step-img {
+    margin-left: 20px;
+    margin-right: 0;
+    order: 2;
+}
+
+.step-text {
+    flex: 1;
+}
+
+.step-text h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    color: #FFCC00;
+    margin-bottom: 10px;
+}
+<style>
+#community {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#community h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 32px;
+    color: #FFCC00;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+#community p {
+    font-size: 18px;
+    color: #FFFFFF;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+.join-link {
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    background-color: #1DA1F2; /* Twitter blue */
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.join-link:hover {
+    background-color: #0d8ce0; /* Darker blue for hover effect */
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+}
+</style>
+<style>
+.hero .tagline, .hero .details {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #FFCC00;
+    text-shadow: 2px 2px 5px #000000;
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.hero .details {
+    font-size: 16px;
+    color: #FFFFFF;
+}
+</style>
+
+
+</style>
+
+
+
     </style>
 </head>
 <body>
     <header>
+        <div class="logo-container">
+            <img src="beenz.png" alt="$BEENZ Logo" onclick="playFartSound()">
+            <div class="arrow">⮜ Press me!</div>
+        </div>
         <h1>$BEENZ</h1>
-        <img src="beenz.png" 
-             alt="Big Bean" 
-             class="big-bean" 
-             onclick="playFartSound()">
-        <div class="arrow">⮜ Press me!</div>
     </header>
 
     <nav>
-        <a href="#about">About $BEENZ</a>
-        <a href="#chart">Chart</a>
+        <a href="#home">Home</a>
+        <a href="#how-to-buy">How to Buy</a>
+        <a href="#tokenomics">Tokenomics</a>
         <a href="#community">Community</a>
+        <a href="#FlappyBeenz">FlappyBeenz</a>
     </nav>
 
-    <marquee>Welcome to $BEENZ Retro Revival! Relive the past, powered by Solana!</marquee>
+  <div id="home" class="hero">
+    <h2>Welcome to <span class="highlight">$BEENZ</span></h2>
+    <p class="tagline">
+        The retro token that's all about nostalgia, fun, and gains! Dive into a world where the past meets the future—$BEENZ brings back the joy of simpler times, combined with the power of blockchain technology on Solana.
+    </p>
+    <p class="details">
+        🚀 <strong>Why Choose $BEENZ?</strong><br>
+        - No gimmicks, just fun! A community-driven token for those who love nostalgia and excitement.<br>
+        - Powered by Solana, delivering lightning-fast transactions and low fees.<br>
+        - Perfect for collectors, enthusiasts, and anyone who loves a touch of retro magic in their crypto journey.
+    </p>
+    <p class="details">
+        💡 <strong>What’s Next?</strong><br>
+        Join the $BEENZ revolution, connect with a like-minded community, and get ready for an adventure packed with laughs, games, and profits.
+    </p>
+    <a href="https://dexscreener.com" class="buy-now">Buy Now</a>
+</div>
 
-    <div style="text-align: center;">
-        <a href="https://dexscreener.com/solana/bh2swzkqsbo1ehrf6rmbzjzztdcyqkh8wunjst95id6n" target="_blank" class="buy-now">Buy Now</a>
+<section id="how-to-buy">
+    <h2>How to Buy</h2>
+    <p>Follow our simple step-by-step guide to purchase $BEENZ and join the revolution.</p>
+    <div class="steps">
+        <div class="step left">
+            <img src="phantom.png" alt="Phantom Wallet" class="step-img">
+            <div class="step-text">
+                <h3>Create a Wallet</h3>
+                <p>Download & Set Up a Phantom Wallet and Buy SOL as Your Base Currency</p>
+            </div>
+        </div>
+        <div class="step right">
+            <img src="dex.png" alt="DEX" class="step-img">
+            <div class="step-text">
+                <h3>Connect to DEX</h3>
+                <p>Choose a Decentralized Exchange (DEX) and Connect Your Trust Wallet</p>
+            </div>
+        </div>
+        <div class="step left">
+            <img src="beenz.png" alt="$BEENZ" class="step-img">
+            <div class="step-text">
+                <h3>Swap Your SOL</h3>
+                <p>Trade Your SOL for $BEENZ and Verify the Transaction</p>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div id="about" class="section">
-        <h2>About $BEENZ</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat sapien non sapien blandit tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
 
-    <div id="chart" class="section">
-        <h2>Check the $BEENZ Chart</h2>
-        <p>Track the progress of $BEENZ and get real-time updates on its price!</p>
-        <a href="https://dexscreener.com/solana/bh2swzkqsbo1ehrf6rmbzjzztdcyqkh8wunjst95id6n" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">View on Dexscreener</a>
-    </div>
 
-    <div id="community" class="section">
-        <h2>Join the $BEENZ Community</h2>
-        <p>Join like-minded individuals and be part of the $BEENZ revolution!</p>
-        <a href="https://t.me/example" target="_blank" style="color: #FFCC00; font-size: 18px; text-decoration: underline;">Join Telegram</a>
+<section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <div class="tokenomics">
+        <div class="card">
+            <h3>Total Supply</h3>
+            <p>1,000,000,000 $BEENZ</p>
+        </div>
+        <div class="card">
+            <h3>No Burns, No Locks</h3>
+            <p>A pump-and-fun launch designed for maximum excitement!</p>
+        </div>
+        <div class="card">
+            <h3>100% Community</h3>
+            <p>Fair distribution with a focus on user engagement and growth.</p>
+        </div>
     </div>
+</section>
 
-    <div class="game-container">
-        <h2>Play Flappy Beenz</h2>
-        <canvas id="flappyBeanGame" width="400" height="600"></canvas>
-    </div>
+
+  <section id="community">
+    <h2>Join the Community</h2>
+    <p>Be part of the vibrant $BEENZ community on Twitter! Connect, share, and grow with like-minded individuals as we shape the future together.</p>
+    <a href="https://x.com/i/communities/1879695521142514000" target="_blank" class="join-link">Join Our Twitter Community</a>
+</section>
+
+
+    <section id="FlappyBeenz">
+        <h2>Flappy Beenz</h2>
+ 
+         <canvas id="flappyBeanGame" width="400" height="600"></canvas>
+    </section>
+	
+	
 
     <footer>
-        <p>&copy; 2025 $BEENZ Retro Revival. Powered by Solana.</p>
+        <p>&copy; 2025 $BEENZ. Powered by Solana.</p>
     </footer>
+
+   <script>
+    // Function to play the fart sound
+    function playFartSound() {
+        const audio = new Audio("https://www.soundjay.com/human/fart-01.mp3");
+        audio.play();
+    }
+
+    // Add floating beans effect
+    document.addEventListener("DOMContentLoaded", () => {
+        const body = document.body;
+
+        for (let i = 0; i < 20; i++) {
+            const bean = document.createElement("img");
+            bean.src = "beenz.png"; // Replace with your actual image source for beans
+            bean.className = "bean";
+            bean.style.position = "absolute";
+            bean.style.width = "30px"; // Set a width for the beans
+            bean.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+            bean.style.top = "-50px"; // Start just above the top of the viewport
+            bean.style.animation = `float ${Math.random() * 3 + 2}s linear infinite`;
+            bean.style.animationDelay = Math.random() * 2 + "s";
+            body.appendChild(bean);
+
+            // Remove the bean after it has floated out of view
+            setTimeout(() => {
+                bean.remove();
+            }, 3000);
+        }
+    });
+
+    // Add keyframes for the floating animation
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes float {
+            from {
+                transform: translateY(-10vh); /* Start above the viewport */
+            }
+            to {
+                transform: translateY(100vh); /* Float down out of the viewport */
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const canvas = document.getElementById("flappyBeanGame");
@@ -407,56 +687,6 @@
         gameLoop();
     });
 </script>
-
-<script>
-    // Function to play the fart sound
-    function playFartSound() {
-        const audio = new Audio("https://www.soundjay.com/human/fart-01.mp3");
-        audio.play();
-    }
-
-    // Add floating beans effect
-    document.addEventListener("DOMContentLoaded", () => {
-        const body = document.body;
-
-        for (let i = 0; i < 20; i++) {
-            const bean = document.createElement("img");
-            bean.src = "beenz.png"; // Replace with your actual image source for beans
-            bean.className = "bean";
-            bean.style.position = "absolute";
-            bean.style.width = "30px"; // Set a width for the beans
-            bean.style.left = Math.random() * 100 + "vw"; // Random horizontal position
-            bean.style.top = "-50px"; // Start just above the top of the viewport
-            bean.style.animation = `float ${Math.random() * 3 + 2}s linear infinite`;
-            bean.style.animationDelay = Math.random() * 2 + "s";
-            body.appendChild(bean);
-
-            // Remove the bean after it has floated out of view
-            setTimeout(() => {
-                bean.remove();
-            }, 3000);
-        }
-    });
-
-    // Add keyframes for the floating animation
-    const style = document.createElement("style");
-    style.textContent = `
-        @keyframes float {
-            from {
-                transform: translateY(-10vh); /* Start above the viewport */
-            }
-            to {
-                transform: translateY(100vh); /* Float down out of the viewport */
-            }
-        }
-    `;
-    document.head.appendChild(style);
-</script>
-
-
-
-
-
 
 </body>
 </html>
